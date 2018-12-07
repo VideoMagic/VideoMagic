@@ -38,7 +38,16 @@ function onConnectClicked() {
 }
 function onStartClicked() {
   let recorder = new screencastify.Recorder();
-  recorder.start({shareUrl: location.href}).then(function() {
+  recorder.start({
+    recordConfig: {  // optional
+      captureSource: 'desktop',  // for window picker, use 'screen' for screen picker
+      audio: {
+        mic: true,
+        system: true
+      }
+    },
+    shareUrl: location.href  // URL of your page that handles shared files.
+  }).then(function() {
         let now = new Date();
         timer.innerText = now.getTime();
         timer.click();
