@@ -1,8 +1,3 @@
-# dabih320.github.io
+# RAVi
 
-### Happy Birthday
-2018.03.20
-https://dabih320.github.io
-
-### TODO
-Use custom domain https://jisu.jaeyoon.io
+For user test
