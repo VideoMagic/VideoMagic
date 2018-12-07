@@ -19,19 +19,62 @@
   <meta name="msapplication-TileColor" content="#b91d47">
   <meta name="theme-color" content="#e4534c">
 
-  <!-- Stylesheets-->
-  <link type="text/css" rel="stylesheet" href="css/main.css">
-</head>
-<body>
+  <!-- Stylesheets -->
+  <style>
 
-  <div id="video">
+      video {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .hidden {
+        display: none;
+      }
+      /*
+      * Just some simple show-hide logic
+      */
+      body.loading * {
+        display: none;
+      }
+      body.loading > .loadingSpinner {
+        display: block;
+      }
+      body:not(.loading) > .loadingSpinner {
+        display: none;
+      }
+      #connectStatus > * {
+        display: none;
+      }
+      #connectStatus.isConnected > .connected {
+        display: block;
+      }
+      #connectStatus:not(.isConnected) > .notConnected {
+        display: block;
+      }
+    </style>
+
+  <body class="loading">
+    <div class="loadingSpinner">Loading...</div>
+      <div id="connectStatus" class="hidden">
+        <div class="notConnected">
+          App is not connected with Screencastify.
+          <button id="connectBtn">Connect it!</button>
+        </div>
+        <div class="connected">
+          App is connected with Screencastify.
+          Use the Share button in Screencastify to share a file with this App,
+          or <button id="startBtn">Start recording from this site</button>
+        </div>
+      </div>
+      <div class="videoPlayer" hidden>
+        <h2></h2>
+        <p>
+          <button id="storeBtn" hidden>Store File In Library</button>
+        </p>
+        <video autoplay controls></video>
+    </div>
     
-  </div>
-  <div id="ravi">
-  	<div class="boxes">
-      <h2>Summary</h2>
-  	</div>
-  </div>
-
-  <script src="js/main.js"></script>
+    <!-- JavaScript and HTML must be in separate files for security. -->
+    <script src="https://www.screencastify.com/libs-api/castify-api.js"></script>
+    <!-- <script src="js/castify-api.js"></script> -->
+    <script src="js/main.js"></script>
 </body>
