@@ -56,6 +56,12 @@ function onStartClicked() {
     console.error('recorder.start() failed', err);
   });
 }
+function onPracticeClicked() {
+  let now = new Date();
+  timer.innerText = now.getTime();
+  timer.click();
+  console.log('practice started ' + now);
+}
 /**
  * Store recording in "Your Recordings" view in Screencastify.
  */
@@ -89,6 +95,8 @@ function initialize() {
     .addEventListener('click', onStartClicked);
   document.getElementById('storeBtn')
     .addEventListener('click', onStoreClicked);
+  document.getElementById('practiceBtn')
+    .addEventListener('click', onPracticeClicked);
 }
 
 initialize();
