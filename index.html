@@ -54,24 +54,26 @@
 
   <body class="loading">
     <div class="loadingSpinner">Loading...</div>
-      <div id="connectStatus" class="hidden">
-        <div class="notConnected">
-          App is not connected with Screencastify.
-          <button id="connectBtn">Connect it!</button>
-        </div>
-        <div class="connected">
-          App is connected with Screencastify.
-          Use the Share button in Screencastify to share a file with this App,
-          or <button id="startBtn">Start recording from this site</button>
-        </div>
+    <div id="connectStatus" class="hidden">
+      <div class="notConnected">
+        App is not connected with Screencastify.
+        <button id="connectBtn">Connect it!</button>
       </div>
-      <div class="videoPlayer" hidden>
-        <h2></h2>
-        <p>
-          <button id="storeBtn" hidden>Store File In Library</button>
-        </p>
-        <video autoplay controls></video>
+      <div class="connected">
+        App is connected with Screencastify.
+        Use the Share button in Screencastify to share a file with this App,
+        or <button id="startBtn">Start recording from this site</button>
+      </div>
     </div>
+    <div class="videoPlayer" hidden>
+      <h2></h2>
+      <p>
+        <button id="storeBtn" hidden>Store File In Library</button>
+      </p>
+      <video autoplay controls></video>
+    </div>
+
+    <div id="timer">yet</div>
     
     <!-- JavaScript and HTML must be in separate files for security. -->
     <script src="https://www.screencastify.com/libs-api/castify-api.js"></script>

@@ -1,4 +1,5 @@
 let connectStatusEl, playingFileId;
+let timer = document.getElementById('timer')
 /**
  * Show video element and play recording.
  * It's a regular file that you could upload to your backend instead.
@@ -38,7 +39,10 @@ function onConnectClicked() {
 function onStartClicked() {
   let recorder = new screencastify.Recorder();
   recorder.start({shareUrl: location.href}).then(function() {
-    console.log('recording started');
+        let now = new Date();
+        timer.innerText = now.getTime();
+        timer.click();
+        console.log('recording started ' + now);
   }, function(err) {
     console.error('recorder.start() failed', err);
   });
