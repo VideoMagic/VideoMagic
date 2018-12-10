@@ -2,40 +2,49 @@
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
+	font-size: .9rem;
+	line-height: 1.5;
 }
 * {
 	box-sizing: border-box;
 }
 #video {
-	width: 72%;
+	width: 68%;
 	height: 100%;
 	background: #000;
 }
+
 #ravi {
-	width: 28%;
+	width: 32%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 	right: 0;
 	box-sizing: border-box;
-	background: #fff;
+	background: white;
+}
+h2 {
+	margin: 5px 0;
 }
 #ravi .buttons {
-    position: absolute;
-    left: -140px;
-    top: 100px;
-    width: 100px;
-    z-index: 1000;
+	position: absolute;
+	left: -140px;
+	top: 100px;
+	width: 100px;
+	z-index: 1000;
 }
 #ravi .buttons .btn {
-    width: 90px;
-    margin-bottom: 10px;
-    padding: 1rem 0;
-    border-radius: 3px;
-    font-size: .85rem;
+	width: 90px;
+	margin-bottom: 10px;
+	padding: 1rem 0;
+	border-radius: 3px;
+	font-size: .85rem;
 	font-weight: 600;
-    color: white;
-    text-align: center;
+	color: white;
+	text-align: center;
+}
+#ravi .buttons .btn:hover {
+	cursor: pointer;
 }
 #ravi .c0 {
 	background-color: #c92a2a;
@@ -49,18 +58,35 @@
 #ravi .c3 {
 	background-color: #868e96;
 }
+#ravi .color0 {
+	color: #c92a2a;
+}
+#ravi .color1 {
+	color: #f59f00;
+}
+#ravi .color2 {
+	color: #3b5bdb;
+}
+#ravi .color3 {
+	color: #868e96;
+}
 #ravi .boxes {
-    overflow-y: scroll;
-    height: 96%;
-    padding: 1.5rem;
+	overflow-y: scroll;
+	height: 96%;
+	padding: 1.5rem;
 	box-sizing: border-box;
 }
 #ravi .box {
-    border-width: 1px 1px 1px 6px; 
+	border-width: 1px 1px 1px 6px; 
 	border-style: solid;
-    padding: 1rem;
+	padding: 1rem;
 	margin-bottom: 1rem;
-	margin-left: 1.2rem;
+	margin-left: 2rem;
+	line-height: 1.5;
+	position: relative;
+}
+#ravi .box:hover {
+	cursor: pointer;
 }
 #ravi .b0 {
 	border-color: #c92a2a;
@@ -74,9 +100,32 @@
 #ravi .b3 {
 	border-color: #868e96;
 }
-#ravi .box.b0 {
-	margin-left: 0;
+#ravi .box.b0, #ravi .box.b2 {
+	margin-left: 1rem;
 }
-h2 {
-	margin-top: 0;
+#ravi .box.margin0, .box.margin28 {
+	margin-left: 0 !important;
+}
+#ravi .box textarea, #ravi .box .memo {
+	width: calc(100% - 3rem);
+	overflow-y: scroll;
+	border: 0;
+	font-size: .84rem;
+}
+#ravi .box span.time {
+	color: grey;
+	font-size: .8rem;
+}
+#ravi .box span.speaker {
+	position: absolute;
+	right: 1rem;
+	display: inline-block;
+}
+#ravi .box span.control {
+	position: absolute;
+	right: 1rem;
+	display: inline-block;
+}
+#ravi .box span.control:hover {
+	cursor: pointer;
 }
