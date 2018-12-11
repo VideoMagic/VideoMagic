@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }
 
     video.onpause = function() {
+        clearTimeout(timeOut);
         rateSlider.disabled = false;
         video.classList.remove("hidden");
     }
