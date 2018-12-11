@@ -3,18 +3,18 @@ let data = [
        "start":"0:12",
        "end":"0:32",
        "speaker":"Jaeyoon",
-       "memo":"we can start today we're going to talk about which buffet we're going to go in Hilton Hotel at Gangnam station. It will be on December 28th from 6 p.m. to 9 p.m..",
+       "memo":"which buffet we're going to go in Hilton Hotel at Gangnam station - on December 28th from 6 p.m. to 9 p.m..",
        "type":"Topic Conversion"
     },
     {  
        "start":"0:38",
-       "end":"0:44",
+       "end":"0:41",
        "speaker":"Geunyoung",
        "memo":"Menu",
        "type":"Topic Conversion"
     },
     {  
-       "start":"0:38",
+       "start":"0:41",
        "end":"0:44",
        "speaker":"Geunyoung",
        "memo":"I like meat better than seafood so I want to go to Santa Buffet.",
@@ -35,14 +35,14 @@ let data = [
        "type":"Idea"
     },
     {  
-       "start":"1:8",
+       "start":"1:15",
        "end":"1:25",
        "speaker":"Jaeyoon",
        "memo":"seafood better but both are okay.",
        "type":"Idea"
     },
     {  
-       "start":"1:25",
+       "start":"1:28",
        "end":"1:38",
        "speaker":"Jaeyoon",
        "memo":"Maybe we should think about other things too => Price",
@@ -71,7 +71,7 @@ let data = [
     },
     {  
        "start":"2:37",
-       "end":"2:38",
+       "end":"2:39",
        "speaker":"Geunyoung",
        "memo":"how about birthday?",
        "type":"Idea"
@@ -105,7 +105,7 @@ let data = [
        "type":"Custom"
     },
     {  
-       "start":"3:42",
+       "start":"3:46",
        "end":"3:52",
        "speaker":"Geunyoung",
        "memo":"And how about another things? How about dessert? Does anybody like like dessert?",

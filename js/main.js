@@ -1,13 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(e) {
     // Your code to run since DOM is loaded and ready
-
     let video = document.querySelector("video");
     let container = document.querySelector(".boxes");
+
+    // rate changer
+    var rateOutput = document.getElementById('rateOutput');
+    var rateSlider = document.getElementById('rateSlider');
 
     let types = ["Topic Conversion", "Idea", "Decision", "Custom"];
     let counter = [0, 0, 0, 0];
     let total = 0;
     let isPlaying = false;
+    let currentRate = 1.0;
 
     // display summary
     let result = "";
@@ -45,6 +49,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
             }
             console.log("clicked");
 
+            rateSlider.disabled = true;
+            video.classList.add("hidden");
+
             clearTimeout(timeOut);
             video.currentTime = timeStart;
             video.play();
@@ -54,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
             timeOut = setTimeout(function() {
                 video.pause();
                 boxes[i].style.backgroundColor = "transparent";
-            }, timeEnd);
+
+            }, timeEnd / currentRate);
 
         });
     });
@@ -66,36 +74,40 @@ document.addEventListener("DOMContentLoaded", function(e) {
         console.log(isPlaying);
         if (!isPlaying) {
             isPlaying = true;
+            rateSlider.disabled = true;
             this.innerText = "Stop Summary";
+            video.controls = false;
             playAll(0);
-            video.onpause = function(e) {
-                console.log("paused");
-                stopPlayAll();
-            }
         }
         else {
             stopPlayAll();
             video.pause();
+            rateSlider.disabled = false;
         }
     }
 
-    // rate changer
-    var rateOutput = document.getElementById('rateOutput');
-    var rateSlider = document.getElementById('rateSlider');
+    video.onpause = function() {
+        rateSlider.disabled = false;
+        video.classList.remove("hidden");
+    }
+
         
     rateSlider.onchange = function(event) {
         // When the slider is moved, changed the video's playback rate
-        video.playbackRate = rateSlider.value;
+        currentRate = rateSlider.value
+        video.playbackRate = currentRate;
     };
     
     video.onplay = function(event) {
         // We can only change the playbackRate once the video has started playing
-        video.playbackRate = rateSlider.value;
+        currentRate = rateSlider.value;
+        video.playbackRate = currentRate;
     };
     
     video.onratechange = function(event) {
         // When the playback rate changes, display the new value
-        rateOutput.textContent = video.playbackRate;
+        currentRate = video.playbackRate;
+        rateOutput.textContent = currentRate;
     };
     
     rateOutput.textContent = rateSlider.value;
@@ -103,20 +115,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
     function stopPlayAll() {
         btn.innerText = "Play Summary";
         isPlaying = false;
+        video.controls = true;
     }
 
     function playAll(i) {
         if (!isPlaying) return;
 
         let ele = data[i];
-        console.log(ele);
-        console.log(i);
         let time = ele.start.split(":");
         let timeStart = parseInt(time[0]) * 60 + parseInt(time[1]);
 
         time = ele.end.split(":");
         let timeEnd = ((parseInt(time[0]) * 60 + parseInt(time[1])) - timeStart) * 1000 + 200;
 
+        console.log(timeStart + ", " + timeEnd);
         clearTimeout(timeOut);
         video.currentTime = timeStart;
         video.play();
@@ -127,8 +139,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
             video.pause();
             boxes[i].style.backgroundColor = "transparent";
             if (i < boxes.length)
-                play(i + 1);
-        }, timeEnd);
+                playAll(i + 1);
+        }, timeEnd / currentRate);
 
     }
 
