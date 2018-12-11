@@ -1,6 +1,6 @@
 let data = [  
     {  
-       "start":"0:12",
+       "start":"0:16",
        "end":"0:32",
        "speaker":"Jaeyoon",
        "memo":"which buffet we're going to go in Hilton Hotel at Gangnam station - on December 28th from 6 p.m. to 9 p.m..",
@@ -191,7 +191,7 @@ let data = [
     {  
        "start":"6:55",
        "end":"7:6",
-       "speaker":"Jaeyoon",
+       "speaker":"Seyong",
        "memo":"Santa Buffet is 3 * and seafood is 4 *.",
        "type":"Idea"
     },

@@ -146,8 +146,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
         timeOut = setTimeout(function() {
             video.pause();
             boxes[i].style.backgroundColor = "transparent";
-            if (i < boxes.length)
+            if (i < boxes.length - 1)
                 playAll(i + 1);
+            else
+                stopPlayAll();
         }, timeEnd / currentRate);
 
     }
