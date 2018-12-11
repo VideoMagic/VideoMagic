@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
         let timeStart = parseInt(time[0]) * 60 + parseInt(time[1]);
 
         time = ele.end.split(":");
-        let timeEnd = ((parseInt(time[0]) * 60 + parseInt(time[1])) - timeStart) * 1000;
+        let timeEnd = ((parseInt(time[0]) * 60 + parseInt(time[1])) - timeStart) * 1000 + 500;
 
         boxes[i].addEventListener("click", function(e) {
             console.log("clicked");
@@ -39,13 +39,26 @@ document.addEventListener("DOMContentLoaded", function(e) {
             video.currentTime = timeStart;
             video.play();
 
-            console.log(timeEnd);
+            activate(boxes, i);
+
             setTimeout(function() {
                 video.pause();
+                boxes[i].style.backgroundColor = "transparent";
                 console.log("paused");
             }, timeEnd);
         })
     });
+
+    function activate(boxes, index) {
+        boxes.forEach(function(ele, i) {
+            if (i == index) {
+                ele.style.backgroundColor = "rgba(200, 100, 100, 0.1)";
+            }
+            else {
+                ele.style.backgroundColor = "transparent";
+            }
+        });
+    }
 
     
 
