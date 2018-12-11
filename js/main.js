@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
         '<span class="time">' + ele.start + ' - ' + ele.end + '</span><br>' + 
         '<div class="memo">' + ele.memo + '</div></div>';
 
+        // let time = ele.start.split(":");
+        // let timeStart = parseInt(time[0]) * 60 + parseInt(time[1]);
+        // time = ele.end.split(":");
+        // let timeEnd = ((parseInt(time[0]) * 60 + parseInt(time[1])) - timeStart);
+        // a += timeEnd;
+
     });
 
     document.querySelector(".signals").innerHTML = ("TOTAL: " + total + " items<br><span class='color0'>" + counter[0] + " Topic Conversions</span> / <span class='color1'>" + counter[1] + " Idea & Suggestions </span> / <span class='color2'>" + counter[2] + " Decision </span><br>");
