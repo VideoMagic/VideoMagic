@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
         total++;
 
         result += '<div class="box b' + typeNumber + ' margin' + i + '"><b>' + ele.type + '</b> <span class="speaker ' + ele.speaker + '">(' + ele.speaker + ')</span><br>' + 
-        '<span class="time">' + ele.start + '- 0:32</span><br>' + 
+        '<span class="time">' + ele.start + ' - ' + ele.end + '</span><br>' + 
         '<div class="memo">' + ele.memo + '</div></div>';
 
     });
@@ -28,13 +28,22 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     data.forEach(function(ele, i) {
         let time = ele.start.split(":");
-        let timeSelected = parseInt(time[0]) * 60 + parseInt(time[1]);
+        let timeStart = parseInt(time[0]) * 60 + parseInt(time[1]);
+
+        time = ele.end.split(":");
+        let timeEnd = ((parseInt(time[0]) * 60 + parseInt(time[1])) - timeStart) * 1000;
 
         boxes[i].addEventListener("click", function(e) {
             console.log("clicked");
 
-            video.currentTime = timeSelected;
+            video.currentTime = timeStart;
             video.play();
+
+            console.log(timeEnd);
+            setTimeout(function() {
+                video.pause();
+                console.log("paused");
+            }, timeEnd);
         })
     });
 
