@@ -38,7 +38,7 @@ let data = [
        "start":"1:8",
        "end":"1:25",
        "speaker":"Jaeyoon",
-       "memo":"what about Jaeyoon? Well, I actually like to eat but all I think I like seafood better but both are okay.",
+       "memo":"seafood better but both are okay.",
        "type":"Idea"
     },
     {  

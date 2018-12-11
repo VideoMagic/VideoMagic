@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     let counter = [0, 0, 0, 0];
     let total = 0;
 
+    // display summary
     let result = "";
 
     data.forEach(function(ele, i) {
@@ -21,9 +22,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     });
 
-    document.querySelector(".signals").innerHTML = ("<span class='color0'>" + counter[0] + " Topic Conversions</span> / <span class='color1'>" + counter[1] + " Idea & Suggestions </span> / <span class='color2'>" + counter[2] + " Decision </span><br>TOTAL: " + total + " items<br>");
+    document.querySelector(".signals").innerHTML = ("TOTAL: " + total + " items<br><span class='color0'>" + counter[0] + " Topic Conversions</span> / <span class='color1'>" + counter[1] + " Idea & Suggestions </span> / <span class='color2'>" + counter[2] + " Decision </span><br>");
     container.innerHTML += result;
 
+    // play individual clip
     let boxes = Array.from(container.querySelectorAll(".box"));
     let timeOut;
 
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
         let timeStart = parseInt(time[0]) * 60 + parseInt(time[1]);
 
         time = ele.end.split(":");
-        let timeEnd = ((parseInt(time[0]) * 60 + parseInt(time[1])) - timeStart) * 1000 + 500;
+        let timeEnd = ((parseInt(time[0]) * 60 + parseInt(time[1])) - timeStart) * 1000 + 200;
 
         boxes[i].addEventListener("click", function(e) {
             console.log("clicked");
@@ -48,8 +50,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
                 boxes[i].style.backgroundColor = "transparent";
             }, timeEnd);
 
-        })
+        });
     });
+
+    // play summary
+    // let isPlaying = false;
+
+    // document.getElementById("playAll").onclick = function(e) {
+    //     if (isPlaying) {
+
+    //     }
+    //     else {
+
+    //     }
+    // }
 
     function activate(boxes, index) {
         boxes.forEach(function(ele, i) {
