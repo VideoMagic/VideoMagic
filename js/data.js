@@ -134,13 +134,13 @@ let data = [
     },
     {  
        "start":"4:53",
-       "end":"4:58",
+       "end":"4:57",
        "speaker":"Seyong",
        "memo":"size and floor",
        "type":"Topic Conversion"
     },
     {  
-       "start":"4:53",
+       "start":"4:59",
        "end":"5:2",
        "speaker":"Jaeyoon",
        "memo":"6 people including David and Sarah.",
@@ -155,7 +155,7 @@ let data = [
     },
     {  
        "start":"5:47",
-       "end":"5:59",
+       "end":"5:50",
        "speaker":"Geunyoung",
        "memo":"and also we have to consider about the mood.",
        "type":"Topic Conversion"
@@ -183,7 +183,7 @@ let data = [
     },
     {  
        "start":"6:38",
-       "end":"6:46",
+       "end":"6:45",
        "speaker":"Dahee",
        "memo":"review",
        "type":"Topic Conversion"
@@ -197,7 +197,7 @@ let data = [
     },
     {  
        "start":"7:13",
-       "end":"7:21",
+       "end":"7:22",
        "speaker":"Geunyoung",
        "memo":"Seafood > Santa",
        "type":"Decision"

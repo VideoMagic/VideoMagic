@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"/>
+
+  <!-- SEO -->
+  <title>RAVi</title>
+  <meta name="author" content="Jaeyoon Song"/>
+  <meta name="copyright" content="Jaeyoon Song"/>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e4534c">
+  <meta name="msapplication-TileColor" content="#b91d47">
+  <meta name="theme-color" content="#e4534c">
+
+  <!-- Stylesheets-->
+  <link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div id="video">
+
+  <video controls width="100%">
+
+    <source src="video/hangout_ravi.mp4"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<p class="controls" style="color:#fff; margin-left: 1rem">
+  <label>재생 속도: <input type="range" step="0.1" min="0.5" max="2" value="1" id="rateSlider"></label> <span id="rateOutput" aria-live="polite">1.0</span>
+</p>
+    
+  </div>
+  <div id="ravi">
+  	<div class="boxes">
+      <h2>Summary <button id="playAll" style="float:right">Play Summary</button></h2>
+      <div class="signals"></div>
+      <br>
+  	</div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
