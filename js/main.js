@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     container.innerHTML += result;
 
     let boxes = Array.from(container.querySelectorAll(".box"));
+    let timeOut;
 
     data.forEach(function(ele, i) {
         let time = ele.start.split(":");
@@ -36,16 +37,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
         boxes[i].addEventListener("click", function(e) {
             console.log("clicked");
 
+            clearTimeout(timeOut);
             video.currentTime = timeStart;
             video.play();
 
             activate(boxes, i);
 
-            setTimeout(function() {
+            timeOut = setTimeout(function() {
                 video.pause();
                 boxes[i].style.backgroundColor = "transparent";
-                console.log("paused");
             }, timeEnd);
+
         })
     });
 
