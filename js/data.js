@@ -94,7 +94,7 @@ let data = [
        "start":"3:2",
        "end":"3:4",
        "speaker":"Dahee",
-       "memo":"cacao bank",
+       "memo":"kakao bank",
        "type":"Idea"
     },
     {  
@@ -119,7 +119,7 @@ let data = [
        "type":"Idea"
     },
     {  
-       "start":"4:22",
+       "start":"4:27",
        "end":"4:35",
        "speaker":"Jaeyoon",
        "memo":"I'm also a big fan of macaron so I also prefer Seafood Buffet I think.",
@@ -148,13 +148,13 @@ let data = [
     },
     {  
        "start":"5:10",
-       "end":"5:21",
+       "end":"5:15",
        "speaker":"Seyong",
        "memo":"Santa > Seafood",
        "type":"Idea"
     },
     {  
-       "start":"5:27",
+       "start":"5:47",
        "end":"5:59",
        "speaker":"Geunyoung",
        "memo":"and also we have to consider about the mood.",
