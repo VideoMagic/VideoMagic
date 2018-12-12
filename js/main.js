@@ -158,7 +158,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
         boxes.forEach(function(ele, i) {
             if (i == index) {
                 ele.style.backgroundColor = "rgba(200, 100, 100, 0.1)";
-                ele.scrollIntoView(false);
+                if (isPlaying)
+                    ele.scrollIntoView(false);
             }
             else {
                 ele.style.backgroundColor = "transparent";
